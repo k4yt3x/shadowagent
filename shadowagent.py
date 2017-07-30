@@ -8,9 +8,9 @@
                                               /___/
 
 
-Name: SR_CTRL
+Name: ShadowAgent
 Author: K4YT3X
-Description: SR_CTRL stands for "Silkroad Controller". It is essentially a
+Description: ShadowAgent stands for "Silkroad Controller". It is essentially a
 shadowsocks client for now. However, in the future, it will become a client for
 shadowgate
 
@@ -132,11 +132,11 @@ def validDomain(hostname):
 
 def print_help():
     print(avalon.FM.BD + '[USAGE]\n' + avalon.FM.RST)
-    print(avalon.FG.Y + 'srctrl              ' + avalon.FM.BD + '# Print Help' + avalon.FM.RST)
-    print(avalon.FG.Y + 'srctrl start        ' + avalon.FM.BD + '# Start VPN' + avalon.FM.RST)
-    print(avalon.FG.Y + 'srctrl stop         ' + avalon.FM.BD + '# Stop VPN' + avalon.FM.RST)
-    print(avalon.FG.Y + 'srctrl status       ' + avalon.FM.BD + '# Check VPN status' + avalon.FM.RST)
-    print(avalon.FG.Y + 'srctrl reconfigure  ' + avalon.FM.BD + '# Reconfigure SRCTRL' + avalon.FM.RST)
+    print(avalon.FG.Y + 'sa              ' + avalon.FM.BD + '# Print Help' + avalon.FM.RST)
+    print(avalon.FG.Y + 'sa start        ' + avalon.FM.BD + '# Start VPN' + avalon.FM.RST)
+    print(avalon.FG.Y + 'sa stop         ' + avalon.FM.BD + '# Stop VPN' + avalon.FM.RST)
+    print(avalon.FG.Y + 'sa status       ' + avalon.FM.BD + '# Check VPN status' + avalon.FM.RST)
+    print(avalon.FG.Y + 'sa reconfigure  ' + avalon.FM.BD + '# Reconfigure SRCTRL' + avalon.FM.RST)
 
 
 def print_logo():
@@ -300,12 +300,12 @@ try:
             print(avalon.FM.BD + '[+] Silkroad: ' + avalon.FG.R + 'STOPPED' + avalon.FM.RST)
         exit(0)
     elif sys.argv[1].upper() == 'INSTALL':
-        avalon.info('Installing SR_CTRL')
-        os.system('cp ' + os.path.abspath(__file__) + ' /usr/bin/srctrl')  # os.rename throws an error when /tmp is in a separate partition
-        os.system('chown root: /usr/bin/srctrl')
-        os.system('chmod 755 /usr/bin/srctrl')
+        avalon.info('Installing ShadowAgent')
+        os.system('cp ' + os.path.abspath(__file__) + ' /usr/bin/sa')  # os.rename throws an error when /tmp is in a separate partition
+        os.system('chown root: /usr/bin/sa')
+        os.system('chmod 755 /usr/bin/sa')
         avalon.info('Installation Complete!')
-        avalon.info('Now you can use "srctrl" command to start SR_CTRL')
+        avalon.info('Now you can use "sa" command to start ShadowAgent')
         if os.path.isfile(CONFPATH):
             if avalon.ask('Config file already exists. Overwrite?', False):
                 setup_wizard()
