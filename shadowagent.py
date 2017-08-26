@@ -67,9 +67,9 @@ except ImportError:
         else:
             print('\033[31m\033[1mInvalid Input!\033[0m')
 
-CONFPATH = '/etc/srctrl.conf'
+CONFPATH = '/etc/shadowagent.conf'
 PIDF = '/var/run/shadowsocks.pid'
-VERSION = '1.0 alpha'
+VERSION = '1.1'
 
 
 # -------------------------------- Classses --------------------------------
@@ -136,16 +136,17 @@ def print_help():
     print(avalon.FG.Y + 'sa start        ' + avalon.FM.BD + '# Start VPN' + avalon.FM.RST)
     print(avalon.FG.Y + 'sa stop         ' + avalon.FM.BD + '# Stop VPN' + avalon.FM.RST)
     print(avalon.FG.Y + 'sa status       ' + avalon.FM.BD + '# Check VPN status' + avalon.FM.RST)
-    print(avalon.FG.Y + 'sa reconfigure  ' + avalon.FM.BD + '# Reconfigure SRCTRL' + avalon.FM.RST)
+    print(avalon.FG.Y + 'sa reconfigure  ' + avalon.FM.BD + '# Reconfigure ShadowAgent' + avalon.FM.RST)
+    print(avalon.FG.Y + 'sa install      ' + avalon.FM.BD + '# Install ShadowAgent' + avalon.FM.RST)
 
 
 def print_logo():
-    print('   ____   __            __                ___                     __')
-    print('  / __/  / /  ___ _ ___/ / ___  _    __  / _ |  ___ _ ___   ___  / /_')
-    print(' _\ \   / _ \/ _ `// _  / / _ \| |/|/ / / __ | / _ `// -_) / _ \/ __/')
-    print('/___/  /_//_/\_,_/ \_,_/  \___/|__,__/ /_/ |_| \_, / \__/ /_//_/\__/')
-    print('                                              /___/')
-    spaces = ((68 - len('Silkroad VPN Controller ' + VERSION)) // 2) * ' '
+    print('     ____   __            __                ___                     __')
+    print('    / __/  / /  ___ _ ___/ / ___  _    __  / _ |  ___ _ ___   ___  / /_')
+    print('   _\ \   / _ \/ _ `// _  / / _ \| |/|/ / / __ | / _ `// -_) / _ \/ __/')
+    print('  /___/  /_//_/\_,_/ \_,_/  \___/|__,__/ /_/ |_| \_, / \__/ /_//_/\__/')
+    print('                                                /___/')
+    spaces = ((70 - len('Silkroad VPN Controller ' + VERSION)) // 2) * ' '
     print(avalon.FM.BD + '\n' + spaces + 'Silkroad VPN Controller ' + VERSION + '\n' + avalon.FM.RST)
 
 
@@ -230,7 +231,7 @@ def select_server():
     for server in servers:
         servers_numerical.append(server)
     for server in servers:
-        print(avalon.FG.Y + str(id) + ': ' + avalon.FM.RST + servers[server])
+        print(avalon.FG.Y + str(id) + ': ' + avalon.FM.RST + server)
         id += 1
     print('')
     while True:
@@ -264,6 +265,8 @@ def parse_config():
 
 # -------------------------------- Procedural --------------------------------
 
+os.system('clear')
+print('\n\n')
 print_logo()
 
 if os.getuid() != 0:
