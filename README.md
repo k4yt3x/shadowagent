@@ -1,12 +1,20 @@
 # ShadowAgent
 
+## Current Version: 1.2
+
 ### What is ShadowAgent?
-ShadowAgent is a SilkRoad VPN Controller. It is currently a fully functioning Shadowsocks client.  This program is a part of the Silkroad Zero Project, which is a project designed for modifying shadowsocks against censorship.
+ShadowAgent is a SilkRoad VPN Controller. It is currently a fully functioning Shadowsocks client.  This program is a part of the Sakura One Project, which is a project designed for modifying shadowsocks against censorship.
 
 <br>
 
 ### Download & Install
-Should be easy enough
+First you'll need shadowsocks.  
+You can install shadowsocks package however you want. Here's an example for installing shadowsocks with pip. root privilege is optional.
+~~~~
+$ pip install git+https://github.com/shadowsocks/shadowsocks.git@master
+~~~~
+
+Then clone and install shadowagent
 ~~~~
 $ git clone https://github.com/K4YT3X/shadowagent.git && cd shadowagent/
 $ sudo python3 shadowagent.py --install  # And the program is installed
