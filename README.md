@@ -2,6 +2,12 @@
 
 ## Current Version: 1.2
 
+### Prerequisites
++ Linux
++ For other prerequisites please see DEPENDENCIES.md
+
+<br>
+
 ### What is ShadowAgent?
 ShadowAgent is a SilkRoad VPN Controller. It is currently a fully functioning Shadowsocks client.  This program is a part of the Sakura One Project, which is a project designed for modifying shadowsocks against censorship.
 
