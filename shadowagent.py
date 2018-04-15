@@ -97,7 +97,7 @@ class silkroad:
         with open(PIDF, 'r') as pidf:
             for line in pidf:
                 if psutil.pid_exists(int(line)):
-                    avalon.subLevelTimeInfo('Killing PID ' + line)
+                    avalon.dbgInfo('Killing PID ' + line)
                     os.system('kill -9 ' + line)
                     return 0
                 else:
